@@ -10,7 +10,7 @@ module.exports = {
         app: './src/index.js'
     },
     plugins: [
-        new UglifyJSPlugin(),
+        // new UglifyJSPlugin(),
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title:'React Poker'
@@ -22,7 +22,7 @@ module.exports = {
         new ExtractTextPlugin('[name].css')
     ],
     output:{
-        filename:'[name].[chunckhas].js',
+        filename:'[name].[hash].js',
         chunkFilename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
@@ -40,6 +40,16 @@ module.exports = {
                 use : [
                     'file-loader'
                 ]
+            },
+            {
+                test:/\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use:{
+                    loader:'babel-loader',
+                    options:{
+                        presets:['env']
+                    }
+                }
             }
         ]
     },
