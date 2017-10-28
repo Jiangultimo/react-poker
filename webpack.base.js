@@ -16,7 +16,7 @@ module.exports = {
             title:'React Poker'
         }),
         new webpack.HashedModuleIdsPlugin(),
-        new webpack.optimize.CommonChunkPlugin({
+        new webpack.optimize.CommonsChunkPlugin({
             name: 'runtime'
         }),
         new ExtractTextPlugin('[name].css')
@@ -30,10 +30,10 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use :ExtractTextPlugin.extract([
-                    fallback:'style-loader',
-                    use:'css-loader',
-                ])
+                use :ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use:'css-loader'
+                })
             },
             {
                 test:/\.(png|svg|jpg|gif)$/,
