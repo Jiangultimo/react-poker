@@ -13,7 +13,8 @@ module.exports = {
         // new UglifyJSPlugin(),
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title:'React Poker'
+            title:'React Poker',
+            template: './index.html'
         }),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
@@ -30,16 +31,20 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use :ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use:'css-loader'
-                })
+                use :[
+                    'style-loader',
+                    {
+                        loader:'css-loader',
+                        options: {
+                            importLoaders:2
+                        }
+                    },
+                    'postcss-loader'
+                ]
             },
             {
                 test:/\.(png|svg|jpg|gif)$/,
-                use : [
-                    'file-loader'
-                ]
+                use : ['file-loader']
             },
             {
                 test:/\.js$/,
