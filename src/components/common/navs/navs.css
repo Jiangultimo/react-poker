@@ -3,3 +3,24 @@
     height: 50px;
     box-shadow: 1px 1px 1px #e3e3e3;
 }
+.navs-ul__group{
+    list-style: none;
+    padding:0;
+    margin:0;
+    display: flex;
+}
+.navs-li__item{
+    width: 200px;
+}
+.navs-a__link{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    transition: ease-in-out .3s;
+}
+.navs-a__link:hover{
+    background-color: #e3e3e3;
+}
