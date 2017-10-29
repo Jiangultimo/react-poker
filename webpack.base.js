@@ -30,21 +30,18 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use :[
-                    'style-loader',
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
                     {
-                        loader:'css-loader',
-                        options: {
-                            importLoaders:2
-                        }
-                    },
-                    'postcss-loader'
+                        loader: 'file-loader'
+                    }
                 ]
             },
             {
-                test:/\.(png|svg|jpg|gif)$/,
-                use : ['file-loader']
+                test: /\.css$/,
+                use :[
+                    'style-loader','css-loader','postcss-loader'
+                ]
             },
             {
                 test:/\.js$/,

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'normalize.css';
+import './style.css';
 import Navs from './components/common/navs/navs.js';
 class DemoList extends React.Component{
     constructor(props){
@@ -9,7 +10,7 @@ class DemoList extends React.Component{
     }
     render(){
         return (
-            <div>
+            <div className="index-div__wrapper">
                 <Navs />
             </div>
         );

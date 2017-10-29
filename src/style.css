@@ -1,0 +1,10 @@
+.index-div__wrapper{
+
+}
+
+.index-div__wrapper::after{
+    clear: both;
+    display: table;
+    content: '';
+    visibility: hidden;
+}
