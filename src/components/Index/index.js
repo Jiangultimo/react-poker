@@ -2,28 +2,24 @@ import React from 'react';
 
 import './index.css';
 import RedWolf from '../../assets/rw.png';
+import {HandleContainerHeight} from '../../utils/utils.js';
 
 class Index extends React.Component{
 	constructor(props) {
 		super(props);
 	}
 	componentDidMount(){
-		this.handleImgPosition();
+		HandleContainerHeight('index');
 		window.onresize = () => {
-			this.handleImgPosition();
+			HandleContainerHeight('index');
 		}
 	}
-	handleImgPosition(){
-		let indexContainer = document.getElementById('index');
-		let navs = document.getElementById('navs');
-		indexContainer.style.height = `${window.innerHeight - navs.clientHeight}px`;
-	}
-	render(){
-		return(
+	render() {
+		return (
 			<div className="index-div__container" id="index">
 				<img src={RedWolf} alt="red wolf" className="index-img__redwolf" />
 			</div>
-			);
+		);
 	}
 }
 
