@@ -9,6 +9,7 @@ class Index extends React.Component{
 		super(props);
 	}
 	componentDidMount(){
+		console.log('index');
 		HandleContainerHeight('index');
 		window.onresize = () => {
 			HandleContainerHeight('index');

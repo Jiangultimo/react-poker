@@ -61,7 +61,7 @@ class Navs extends React.Component{
         // this.handleNavsPosition = this.
     }
     componentDidMount(){
-        console.log(document.getElementById('navs'));
+        console.log('navs');
         this.handleNavsPosition();
         window.onresize = () => {
             this.handleNavsPosition();

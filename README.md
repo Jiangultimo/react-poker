@@ -14,3 +14,5 @@ componentDidMount(){
 > componentDidMount() is invoked immediately after a component is mounted. Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
 
 可见`componentDidMount()`会在组件马上挂在后立即执行，我在里面添加了`window.onresize`事件，理论上讲，在`index`挂载完毕后，`window.onreisze`事件里面已经添加了我的`HandleContainerHeight()`函数，但是实际上`window`并没有触发`resize`事件。
+
+**解疑** 经过调试，算是发现了问题。在调试过程中，分辨在`navs`组件和`index`组件的`componentDidMout()`函数中进行`console.log`，发现`index`先执行，然后执行`navs`，那么在`navs`和`index`中都进行了`window.onresize`的绑定，所以是`navs`的`window.onresize`事件覆盖了`index`的`window.onresize`事件，所以当再次进入`index`组件时，覆盖回来了，所以这个时候`index`的`window.onresize`能正常执行。
