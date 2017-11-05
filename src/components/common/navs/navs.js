@@ -4,9 +4,9 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-
+import {HandleContainerHeight} from '../../../utils/utils.js';
 import './navs.css';
-
+import NavsRouter from '../../../router/router.config.js';
 //引入路由组件
 import Index from '../../Index/index.js';
 import About from '../../About/about.js';
@@ -61,8 +61,8 @@ class Navs extends React.Component{
         // this.handleNavsPosition = this.
     }
     componentDidMount(){
-        console.log('navs');
         this.handleNavsPosition();
+        console.log(Route);
         window.onresize = () => {
             this.handleNavsPosition();
         }
@@ -83,7 +83,8 @@ class Navs extends React.Component{
     render(){
         return(
             <div className="navs-div__container">
-            <Router>
+                <NavsRouter />
+            {/* <Router>
                 <div>
                     <ul className="navs-ul__group" id="navs">
                         {
@@ -97,10 +98,8 @@ class Navs extends React.Component{
                             return item.key == 'Index' ? <Route exact path={item.link} component={item.component} key={item.key} />:<Route path={item.link} component={item.component} key={item.key} />
                         })
                     }
-                    {/* <Route exact path="/" component={Index} />
-                    <Route path="/about" component={About} /> */}
                 </div>
-            </Router>
+            </Router> */}
             </div>
         );
     }
