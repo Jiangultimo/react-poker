@@ -15,6 +15,9 @@ import Mm2 from '../../Mm2/Mm2.js';
 import Mm2r from '../../Mm2r/Mm2r.js';
 import Mm3 from '../../Mm3/Mm3.js';
 
+//导入编辑器
+import MEditor from '../../Editor/editor';
+
 class Navs extends React.Component{
     constructor(props){
         super(props);
@@ -22,7 +25,7 @@ class Navs extends React.Component{
             navs:[
                 {
                     name:'Metal Max',
-                    link:'/',
+                    link:'/editor',
                     component:Index,
                     key:"Index"
                 },
@@ -55,6 +58,12 @@ class Navs extends React.Component{
                     link:'/about',
                     component:About,
                     key:'About'
+                },
+                {
+                    name:'Editor',
+                    link:'/',
+                    component:MEditor,
+                    key:'Editor'
                 }
             ]
         };
@@ -83,8 +92,7 @@ class Navs extends React.Component{
     render(){
         return(
             <div className="navs-div__container">
-                <NavsRouter />
-            {/* <Router>
+            <Router>
                 <div>
                     <ul className="navs-ul__group" id="navs">
                         {
@@ -99,7 +107,7 @@ class Navs extends React.Component{
                         })
                     }
                 </div>
-            </Router> */}
+            </Router> 
             </div>
         );
     }

@@ -1,0 +1,20 @@
+.editor-div__wrapper{
+    height: 400px;
+    width: 600px;
+    margin-left: auto;
+    margin-right:auto;
+    /* background-color:#fff; */
+    cursor: text;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;
+}
+.editor-div__panel{
+    height: 400px;
+}
+.editor-span__placeholder{
+    position: absolute;
+    top:10px;
+    left:10px;
+    color:#e3e3e3;
+}
