@@ -14,7 +14,7 @@ const blockRenderMap = Immutable.Map({
         element:'h2'
     }
 });
-const INLINE_STYLE = ['BOLD','ITALIC'];
+const INLINE_STYLE = ['BOLD','ITALIC','STRIKETHROUGH'];
 class MEditor extends React.Component{
     constructor(props){
         super(props);
